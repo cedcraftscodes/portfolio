@@ -36,7 +36,7 @@ html {
 }
 
 .contacts-bar{
-  height: 80px;
+
   background-color: #1565C0;
   color: white;
 
@@ -44,7 +44,8 @@ html {
 
 .contacts-bar ul{
   text-align: center;
-  padding-top: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .contacts-bar ul li{
@@ -193,11 +194,13 @@ a.anchor {
     top:0;
     width:100%;
     z-index:100;
+    margin-top: -20px;
 }
 
 /* change the background color */
 .navbar-custom {
     background-color: #0D47A1;
+
 }
 /* change the brand and text color */
 .navbar-custom .navbar-brand,
@@ -213,3 +216,4 @@ a.anchor {
 .navbar-custom .nav-item:hover .nav-link {
     color: #ffffff;
 }
+
