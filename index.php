@@ -27,7 +27,6 @@
   <link rel="stylesheet" href="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
 
 
-
 </head>
 <body>
 
@@ -48,11 +47,11 @@
         <!-- Raised button -->
         <button type="button" class="btn btn-raised btn-info"><i class="fa fa-download" aria-hidden="true"></i> Download My Resume</button>
         <!-- Raised button -->
-        <button type="button" class="btn btn-raised btn-info"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Hire Me</button>
+        <a href="mailto:cedcraftscodes@gmail.com?Subject=We%20want%20you!" target="_top"" type="button" class="btn btn-raised btn-info"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Hire Me</a>
 
 
         <div id="social">
-          <a class="facebookBtn smGlobalBtn" href="#" ></a>
+          <a class="facebookBtn smGlobalBtn" href="https://www.facebook.com/cedricdon.coloma" ></a>
           <a class="twitterBtn smGlobalBtn" href="#" ></a>
           <a class="googleplusBtn smGlobalBtn" href="#" ></a>
           <a class="linkedinBtn smGlobalBtn" href="#" ></a>
@@ -60,8 +59,6 @@
           <a class="tumblrBtn smGlobalBtn" href="#" ></a>
           <a class="rssBtn smGlobalBtn" href="#" ></a>
         </div>
-
-
       </div>
     </div>
 
@@ -83,7 +80,7 @@
     </button>
 
 
-<a class="navbar-brand hidden-xl-up" href="#">Cedric Coloma</a>
+    <a class="navbar-brand hidden-xl-up" href="#">Cedric Coloma</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto d-block">
@@ -97,8 +94,6 @@
 
     </div>
   </nav>
-
-
 
   <div class="container">
     <a href="" class="anchor" id="experience"></a>
@@ -188,7 +183,7 @@
           <h4 class="text-center text-primary">Other Skills</h4>
           <div id="otherskills">
 
-            <div class="btn-group" role="group" aria-label="Basic example">
+            <div class="btn-group text-center" role="group" aria-label="Other Skills">
               <button type="button" class="btn btn-primary">Wireframe</button>
               <button type="button" class="btn btn-warning">Git</button>
               <button type="button" class="btn btn-warning">MVC</button>
@@ -214,7 +209,7 @@
             <div class="card-block">
               <h4 class="card-title">FlashDriveFilesCopier</h4>
               <p class="card-text">Copy files from flashdrive to your PC when it is plugged.</p>
-              <a href="#" class="btn btn-primary">Clone in Github</a>
+              <a href="https://github.com/cedcraftscodes/FlashDriveFilesCopier" class="btn btn-primary">Clone in Github</a>
             </div>
           </div>
         </div>
@@ -225,7 +220,7 @@
             <div class="card-block">
               <h4 class="card-title">AutoResponder</h4>
               <p class="card-text">An android app that auto responds to messages received..</p>
-              <a href="#" class="btn btn-primary">Clone in Github</a>
+              <a href="https://github.com/cedcraftscodes/AutoResponder" class="btn btn-primary">Clone in Github</a>
             </div>
           </div>
         </div>
@@ -236,12 +231,36 @@
             <div class="card-block">
               <h4 class="card-title">ExternalToAndroid</h4>
               <p class="card-text">Copies files from Flash Drive to Android using OTG automatically without prompting the user.</p>
-              <a href="#" class="btn btn-primary">Clone in Github</a>
+              <a href="https://github.com/cedcraftscodes/ExternalToAndroid" class="btn btn-primary">Clone in Github</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="card card-mp" >
+      <h3>Other Things I do and Enjoy</h3>
+      <div class="container text-center">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-primary">Blogging @ Itcstutorial.xyz</button>
+          <button type="button" class="btn btn-default">Piano</button>
+          <button type="button" class="btn btn-warning">Violin</button>
+          <button type="button" class="btn btn-info">Code Reviewing</button>
+          <button type="button" class="btn btn-success">Reading Books</button>
+          <button type="button" class="btn btn-primary">Teaching Students</button>
+          <button type="button" class="btn btn-warning">Watching Anime</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card card-mp" >
+      <h3>Foods Consumed Over the Week</h3>
+      <div class="container text-center">
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+      </div>
+    </div>
+
 
     <a href="" class="anchor" id="contacts"></a>
     <div class="card card-mp">
@@ -328,8 +347,141 @@
       } 
     });
 
-  </script>
 
 
+    $(document).keydown(function(e){
+      if(e.which === 123){
+       return false;
+     }
+   });
+    $(document).bind("contextmenu",function(e) {
+     e.preventDefault();
+   });
+
+
+
+ </script>
+
+ <script>
+  window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+      animationEnabled: true,
+      title: {
+        text: "Daily Food Consumption"
+      },
+      axisX: {
+        valueFormatString: "DDD",
+        minimum: new Date(2017, 10, 5, 23),
+        maximum: new Date(2017, 10, 12, 1)
+      },
+      axisY: {
+        title: "Quantity"
+      },
+      legend: {
+        verticalAlign: "top",
+        horizontalAlign: "right",
+        dockInsidePlotArea: true
+      },
+      toolTip: {
+        shared: true
+      },
+      data: [{
+        name: "Coffee",
+        showInLegend: true,
+        legendMarkerType: "square",
+        type: "area",
+        color: "#6D4C41",
+        markerSize: 0,
+        dataPoints: [
+        { x: new Date(2017, 10, 6), y: 220 },
+        { x: new Date(2017, 10, 7), y: 120 },
+        { x: new Date(2017, 10, 8), y: 144 },
+        { x: new Date(2017, 10, 9), y: 162 },
+        { x: new Date(2017, 10, 10), y: 129 },
+        { x: new Date(2017, 10, 11), y: 109 },
+        { x: new Date(2017, 10, 12), y: 129 }
+        ]
+      },
+      {
+        name: "Pizza",
+        showInLegend: true,
+        legendMarkerType: "square",
+        type: "area",
+        color: "#FFA000",
+        markerSize: 0,
+        dataPoints: [
+        { x: new Date(2017, 10, 6), y: 42 },
+        { x: new Date(2017, 10, 7), y: 200 },
+        { x: new Date(2017, 10, 8), y: 29 },
+        { x: new Date(2017, 10, 9), y: 42 },
+        { x: new Date(2017, 10, 10), y: 150},
+        { x: new Date(2017, 10, 11), y: 15 },
+        { x: new Date(2017, 10, 12), y: 12 }
+        ]
+      },
+      {
+        name: "Meat",
+        showInLegend: true,
+        legendMarkerType: "square",
+        type: "area",
+        color: "#F4511E",
+        markerSize: 0,
+        dataPoints: [
+        { x: new Date(2017, 10, 6), y: 42 },
+        { x: new Date(2017, 10, 7), y: 34 },
+        { x: new Date(2017, 10, 8), y: 160 },
+        { x: new Date(2017, 10, 9), y: 42 },
+        { x: new Date(2017, 10, 10), y: 90},
+        { x: new Date(2017, 10, 11), y: 15 },
+        { x: new Date(2017, 10, 12), y: 35 }
+        ]
+      },
+      {
+        name: "Healthy Stuff",
+        showInLegend: true,
+        legendMarkerType: "square",
+        type: "area",
+        color: "#76FF03",
+        markerSize: 0,
+        dataPoints: [
+        { x: new Date(2017, 10, 6), y: 150 },
+        { x: new Date(2017, 10, 7), y: 250 },
+        { x: new Date(2017, 10, 8), y: 29 },
+        { x: new Date(2017, 10, 9), y: 42 },
+        { x: new Date(2017, 10, 10), y: 80},
+        { x: new Date(2017, 10, 11), y: 15 },
+        { x: new Date(2017, 10, 12), y: 12 }
+        ]
+      },
+      {
+        name: "Dairy Products",
+        showInLegend: true,
+        legendMarkerType: "square",
+        type: "area",
+        color: "#FFF59D",
+        markerSize: 0,
+        dataPoints: [
+        { x: new Date(2017, 10, 6), y: 42 },
+        { x: new Date(2017, 10, 7), y: 34 },
+        { x: new Date(2017, 10, 8), y: 29 },
+        { x: new Date(2017, 10, 9), y: 42 },
+        { x: new Date(2017, 10, 10), y: 53},
+        { x: new Date(2017, 10, 11), y: 15 },
+        { x: new Date(2017, 10, 12), y: 12 }
+        ]
+      }
+      ]
+    });
+
+
+    chart.render();
+
+  }
+</script>
+
+
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>
