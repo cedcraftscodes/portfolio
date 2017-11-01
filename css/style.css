@@ -1,0 +1,225 @@
+html {
+  overflow:   scroll;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+
+.card-mp{
+  margin-top: 20px;
+  padding: 20px;
+}
+
+
+.card-mp h3{
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+
+
+
+.top-bar{
+  height: 155px;
+  background-color: #1E88E5;
+
+}
+.desc-bar{
+
+  background-color: #1976D2;
+
+  color: white;
+  text-align: center;
+  padding-bottom: 20px;
+
+}
+
+.contacts-bar{
+  height: 60px;
+  background-color: #1565C0;
+  color: white;
+
+}
+
+.contacts-bar ul{
+  text-align: center;
+  padding-top: 18px;
+}
+
+.contacts-bar ul li{
+  padding-right: 20px;
+}
+
+
+
+.nav-bar{
+  height: 100px;
+  background-color: #0D47A1;
+  color: white;
+
+  position:fixed;
+  width:100%;
+  z-index:100;
+}
+
+.nav-bar ul{
+  text-align: center;
+  padding-top: 30px;
+}
+
+.nav-bar ul li{
+  padding-right: 35px;
+  font-weight: bold;
+}
+
+.nav-bar a{
+  padding-right: 35px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-bar a:hover { 
+    color: #BBDEFB;
+    text-decoration: none;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -150px;
+
+}
+
+
+
+#portfolio-img{
+  width: 180px;
+  border:solid white 4px;
+  margin-top: -80px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+}
+
+
+#portfolio-img-bot{
+  width: 180px;
+  border:solid white 4px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.skillbar {
+  position:relative;
+  display:block;
+  margin-bottom:15px;
+  width:100%;
+  background:#eee;
+  height:35px;
+  border-radius:3px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  -webkit-transition:0.4s linear;
+  -moz-transition:0.4s linear;
+  -ms-transition:0.4s linear;
+  -o-transition:0.4s linear;
+  transition:0.4s linear;
+  -webkit-transition-property:width, background-color;
+  -moz-transition-property:width, background-color;
+  -ms-transition-property:width, background-color;
+  -o-transition-property:width, background-color;
+  transition-property:width, background-color;
+}
+
+.skillbar-title {
+  position:absolute;
+  top:0;
+  left:0;
+  width:110px;
+  font-weight:bold;
+  font-size:13px;
+  color:#ffffff;
+  background:#6adcfa;
+  -webkit-border-top-left-radius:3px;
+  -webkit-border-bottom-left-radius:4px;
+  -moz-border-radius-topleft:3px;
+  -moz-border-radius-bottomleft:3px;
+  border-top-left-radius:3px;
+  border-bottom-left-radius:3px;
+}
+
+.skillbar-title span {
+  display:block;
+  background:rgba(0, 0, 0, 0.1);
+  padding:0 20px;
+  height:35px;
+  line-height:35px;
+  -webkit-border-top-left-radius:3px;
+  -webkit-border-bottom-left-radius:3px;
+  -moz-border-radius-topleft:3px;
+  -moz-border-radius-bottomleft:3px;
+  border-top-left-radius:3px;
+  border-bottom-left-radius:3px;
+}
+
+.skillbar-bar {
+  height:35px;
+  width:0px;
+  background:#6adcfa;
+  border-radius:3px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+}
+
+.skill-bar-percent {
+  position:absolute;
+  right:10px;
+  top:0;
+  font-size:11px;
+  height:35px;
+  line-height:35px;
+  color:#ffffff;
+  color:rgba(0, 0, 0, 0.4);
+}
+
+#bars {
+  margin: 2em auto;
+  max-width: 960px;
+  overflow: hidden;
+}
+
+.bar {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.bar h3 {
+  font-size: 1.4em;
+  font-weight: normal;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.bar-circle {
+  display: block;
+  margin: 0.7em auto;
+}
+
+
+#otherskills{
+  padding: 20px;
+  display: block;
+}
+
+
+
+#getintouch p {
+  margin-left: 40px;
+}
