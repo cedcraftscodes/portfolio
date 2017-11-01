@@ -92,7 +92,23 @@
   </div>  
 
 -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-inverse">
+<style type="text/css">
+  
+    /* Note: Try to remove the following lines to see the effect of CSS positioning */
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+
+
+</style>
+
+<nav class="navbar navbar-expand-lg fixedElement navbar-custom" >
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -337,40 +353,17 @@
    e.preventDefault();
  });
 
-
-  $(document).ready(function() {
-
-    var toggleAffix = function(affixElement, scrollElement, wrapper) {
-
-      var height = affixElement.outerHeight(),
-      top = wrapper.offset().top;
-
-      if (scrollElement.scrollTop() >= top){
-        wrapper.height(height);
-        affixElement.addClass("affix");
-      }
-      else {
-        affixElement.removeClass("affix");
-        wrapper.height('auto');
-      }
-      
-    };
-
-
-    $('[data-toggle="affix"]').each(function() {
-      var ele = $(this),
-      wrapper = $('<div></div>');
-
-      ele.before(wrapper);
-      $(window).on('scroll resize', function() {
-        toggleAffix(ele, $(this), wrapper);
-      });
-
-    // init
-    toggleAffix(ele, $(window), wrapper);
-  });
-
-  });
+$(window).scroll(function(e){ 
+  var $el = $('.fixedElement'); 
+  var isPositionFixed = ($el.css('position') == 'fixed');
+  if ($(this).scrollTop() > 200 && !isPositionFixed){ 
+    $('.fixedElement').css({'position': 'fixed', 'top': '0px'}); 
+  }
+  if ($(this).scrollTop() < 200 && isPositionFixed)
+  {
+    $('.fixedElement').css({'position': 'static', 'top': '0px'}); 
+  } 
+});
 
 </script>
 
