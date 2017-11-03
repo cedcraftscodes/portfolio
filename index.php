@@ -44,11 +44,9 @@
 
         <p>I dedicate myself in providing practical solutions to business owners and as well as to professionals who are having a hard time managing their businesses. </p>
 
-        <!-- Raised button -->
-        <button type="button" class="btn btn-raised btn-info"><i class="fa fa-download" aria-hidden="true"></i> Download My Resume</button>
-        <!-- Raised button -->
-        <a href="mailto:cedcraftscodes@gmail.com?Subject=We%20want%20you!" target="_top"" type="button" class="btn btn-raised btn-info"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Hire Me</a>
+        <button type="button" class="btn btn-raised btn-info" data-toggle="modal" data-target="#resumemodal"><i class="fa fa-download" aria-hidden="true"></i> Download My Resume</button>
 
+        <a href="mailto:cedcraftscodes@gmail.com?Subject=We%20want%20you!" target="_top"" type="button" class="btn btn-raised btn-info"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Hire Me</a>
 
         <div id="social">
           <a class="facebookBtn smGlobalBtn" href="https://www.facebook.com/cedricdon.coloma" ></a>
@@ -63,6 +61,8 @@
     </div>
 
   </div>
+
+
 
   <div class="container-fluid contacts-bar">
     <ul class="list-inline" >
@@ -95,7 +95,69 @@
     </div>
   </nav>
 
+
+
+
   <div class="container">
+
+
+
+    <div class="modal fade" id="resumemodal" tabindex="-1" role="dialog" aria-labelledby="resumemodallabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-primary" id="resumemodallabel">Obtain my Resume</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form id="resumeform">
+            <div class="modal-body">
+
+              <div class="form-group">
+                <label for="recipient-email" class="col-form-label">Your Email:</label><br>
+                <input type="text" class="form-control" name="email" id="recipient-email" placeholder="Input valid email.">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Message:</label><br>
+                <textarea class="form-control" id="message-text" name="message" rows=10 placeholder="Why do you want to obtain my resume?"></textarea>
+              </div>
+              <input type="hidden" value="submit_resume" name="action">
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Obtain a Copy</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="msgmodal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div id="msgmodalheader" class="modal-header">
+            <h4 class="modal-title text-primary" id="msgtitle"></h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+
+          </div>
+          <div class="modal-body">
+            <p id="modalmsg"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="msgmodalbtn" class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
     <a href="" class="anchor" id="experience"></a>
     <div class="card card-mp" >
       <h3>Experience</h3>
@@ -362,126 +424,10 @@
 
  </script>
 
- <script>
-  window.onload = function () {
-
-    var chart = new CanvasJS.Chart("chartContainer", {
-      animationEnabled: true,
-      title: {
-        text: "Daily Food Consumption"
-      },
-      axisX: {
-        valueFormatString: "DDD",
-        minimum: new Date(2017, 10, 5, 23),
-        maximum: new Date(2017, 10, 12, 1)
-      },
-      axisY: {
-        title: "Quantity"
-      },
-      legend: {
-        verticalAlign: "top",
-        horizontalAlign: "right",
-        dockInsidePlotArea: true
-      },
-      toolTip: {
-        shared: true
-      },
-      data: [{
-        name: "Coffee",
-        showInLegend: true,
-        legendMarkerType: "square",
-        type: "area",
-        color: "#6D4C41",
-        markerSize: 0,
-        dataPoints: [
-        { x: new Date(2017, 10, 6), y: 220 },
-        { x: new Date(2017, 10, 7), y: 120 },
-        { x: new Date(2017, 10, 8), y: 144 },
-        { x: new Date(2017, 10, 9), y: 162 },
-        { x: new Date(2017, 10, 10), y: 129 },
-        { x: new Date(2017, 10, 11), y: 109 },
-        { x: new Date(2017, 10, 12), y: 129 }
-        ]
-      },
-      {
-        name: "Pizza",
-        showInLegend: true,
-        legendMarkerType: "square",
-        type: "area",
-        color: "#FFA000",
-        markerSize: 0,
-        dataPoints: [
-        { x: new Date(2017, 10, 6), y: 42 },
-        { x: new Date(2017, 10, 7), y: 200 },
-        { x: new Date(2017, 10, 8), y: 29 },
-        { x: new Date(2017, 10, 9), y: 42 },
-        { x: new Date(2017, 10, 10), y: 150},
-        { x: new Date(2017, 10, 11), y: 15 },
-        { x: new Date(2017, 10, 12), y: 12 }
-        ]
-      },
-      {
-        name: "Meat",
-        showInLegend: true,
-        legendMarkerType: "square",
-        type: "area",
-        color: "#F4511E",
-        markerSize: 0,
-        dataPoints: [
-        { x: new Date(2017, 10, 6), y: 42 },
-        { x: new Date(2017, 10, 7), y: 34 },
-        { x: new Date(2017, 10, 8), y: 160 },
-        { x: new Date(2017, 10, 9), y: 42 },
-        { x: new Date(2017, 10, 10), y: 90},
-        { x: new Date(2017, 10, 11), y: 15 },
-        { x: new Date(2017, 10, 12), y: 35 }
-        ]
-      },
-      {
-        name: "Healthy Stuff",
-        showInLegend: true,
-        legendMarkerType: "square",
-        type: "area",
-        color: "#76FF03",
-        markerSize: 0,
-        dataPoints: [
-        { x: new Date(2017, 10, 6), y: 150 },
-        { x: new Date(2017, 10, 7), y: 250 },
-        { x: new Date(2017, 10, 8), y: 29 },
-        { x: new Date(2017, 10, 9), y: 42 },
-        { x: new Date(2017, 10, 10), y: 80},
-        { x: new Date(2017, 10, 11), y: 15 },
-        { x: new Date(2017, 10, 12), y: 12 }
-        ]
-      },
-      {
-        name: "Dairy Products",
-        showInLegend: true,
-        legendMarkerType: "square",
-        type: "area",
-        color: "#FFF59D",
-        markerSize: 0,
-        dataPoints: [
-        { x: new Date(2017, 10, 6), y: 42 },
-        { x: new Date(2017, 10, 7), y: 34 },
-        { x: new Date(2017, 10, 8), y: 29 },
-        { x: new Date(2017, 10, 9), y: 42 },
-        { x: new Date(2017, 10, 10), y: 53},
-        { x: new Date(2017, 10, 11), y: 15 },
-        { x: new Date(2017, 10, 12), y: 12 }
-        ]
-      }
-      ]
-    });
 
 
-    chart.render();
-
-  }
-</script>
-
-
-
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ <script type="text/javascript" src="js/foods.js"></script>
+ <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ <script type="text/javascript" src="js/emailresume.js"></script>
 </body>
 </html>
